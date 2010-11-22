@@ -1,0 +1,57 @@
+Views:
+disposition
+	popup
+	thank you/confirm
+	
+
+Controllers:
+disposition
+  def index - (for reporting)
+  end
+
+  def show - (click into single )
+  end
+
+  def new - (on pop)
+  end
+
+  def create (takes the form submit from new)
+  end
+
+  def edit (use?)
+  end
+
+  def update (use?)
+  end
+
+  def destroy (use?)
+  end
+end
+
+admin
+
+CRUD for all models
+
+Models:
+dispositions
+	has one
+		channel of purchase
+		business
+		primary wrapup
+			secondary wrapup through primary wrapup
+		Promotion
+		Mood
+		Survey
+			display question
+			answer
+	RMA/Order/Shipment
+	Member ID
+	Timestamp
+	CS Rep
+	Notes
+	Followup?
+	Suggested wrapup
+	Interaction ID
+	
+	
+Tables:

@@ -1,0 +1,6 @@
+checkout
+write test describing intended behavior(failing at first)
+make test pass
+refactor
+check in
+deploy to heroku
