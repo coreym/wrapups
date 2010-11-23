@@ -1,0 +1,30 @@
+# == Schema Information
+# Schema version: 20101123215741
+#
+# Table name: contacts
+#
+#  id               :integer         not null, primary key
+#  time_to_complete :integer
+#  notes            :text
+#  followup         :boolean
+#  suggested_wrapup :string(255)
+#  interaction_id   :integer
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  time_to_complete: 1
+  notes: MyText
+  followup: false
+  suggested_wrapup: MyString
+  interaction_id: 1
+
+two:
+  time_to_complete: 1
+  notes: MyText
+  followup: false
+  suggested_wrapup: MyString
+  interaction_id: 1

@@ -1,0 +1,13 @@
+<table>
+	<% @contacts.each do |contact| %>
+	<tr>
+		<td><%= contact.id %></td>
+		<td><%= contact.time_to_complete %>s</td>
+		<td><%= "yes" if contact.followup?%></td>
+		<td><%= contact.interaction_id %></td>
+		<td><%= contact.created_at %></td>
+		<td><%= truncate("#{contact.notes}") %></td>
+		<td><%= truncate("#{contact.suggested_wrapup}") %></td>
+	</tr>
+	<% end %>
+	</table>

@@ -5,7 +5,7 @@ disposition
 	
 
 Controllers:
-disposition
+_disposition
   def index - (for reporting)
   end
 
@@ -28,30 +28,30 @@ disposition
   end
 end
 
-admin
+_admin
 
 CRUD for all models
 
 Models:
-dispositions
-	has one
-		channel of purchase
-		business
-		primary wrapup
-			secondary wrapup through primary wrapup
-		Promotion
-		Mood
-		Survey
-			display question
-			answer
-	RMA/Order/Shipment
-	Member ID
-	Timestamp
-	CS Rep
+Contact
+	belongs_to:
+		channel of purchase <- has many Contacts
+		business<- has many Contacts
+ 		Promotion<- has many Contacts
+		Mood<- has many Contacts
+		Survey<- has one Contact, has one display question, has one answer
+			display question - belongs to Survey
+			answer - belongs to Survey
+		RMA/Order/Shipment - <- has many
+		CS Rep has many Contacts
+		Member ID has many Contacts
+	time_to_complete
 	Notes
 	Followup?
 	Suggested wrapup
 	Interaction ID
+	primary wrapup<- has many dispositions
+		has one secondary wrapup through primary wrapup has many dispositions through primary wrapup
 	
 	
 Tables:
