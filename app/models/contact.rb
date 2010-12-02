@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20101123215741
+# Schema version: 20101201220038
 #
 # Table name: contacts
 #
@@ -11,7 +11,10 @@
 #  interaction_id   :integer
 #  created_at       :datetime
 #  updated_at       :datetime
+#  channel_id       :integer
 #
 
 class Contact < ActiveRecord::Base
+belongs_to :channel
+
 end

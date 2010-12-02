@@ -1,13 +1,33 @@
-<table>
+
+<table id='results'>
+	<h1 class='titlebar'>Results:</h1>
+	<tr class='tableheader'>
+		<td>ID</td>
+		<td>Channel</td>
+		<td>TtC</td>
+		<td>Followup?</td>
+		<td>Interaction ID</td>
+		<td>Timestamp</td>
+		<td>Notes</td>
+		<td>Suggested wrapup</td>
+	</tr>
 	<% @contacts.each do |contact| %>
 	<tr>
+		<%= link_to contact do %>
 		<td><%= contact.id %></td>
+		<td><%= contact.channel[:name] %></td>
 		<td><%= contact.time_to_complete %>s</td>
-		<td><%= "yes" if contact.followup?%></td>
+		<td><%= if contact.followup? 
+					"yes" 
+				else 
+					"no" 
+				end %></td>
 		<td><%= contact.interaction_id %></td>
 		<td><%= contact.created_at %></td>
 		<td><%= truncate("#{contact.notes}") %></td>
 		<td><%= truncate("#{contact.suggested_wrapup}") %></td>
+		<% end %>
 	</tr>
-	<% end %>
-	</table>
+	
+	<% end%>
+</table>

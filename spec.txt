@@ -43,8 +43,9 @@ Contact
 			display question - belongs to Survey
 			answer - belongs to Survey
 		RMA/Order/Shipment - <- has many
-		CS Rep has many Contacts
-		Member ID has many Contacts
+	
+		Member ID<- has many Contacts
+	CS Rep
 	time_to_complete
 	Notes
 	Followup?

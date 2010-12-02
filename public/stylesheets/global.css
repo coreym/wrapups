@@ -1,0 +1,21 @@
+/* Global CSS */
+.titlebar{
+	background:none repeat scroll 0 0 #F1F1F1;
+	border-bottom:1px solid #DDDDDD;
+	font-weight:normal;
+	padding:5px 10px;
+}
+/* View-specific CSS */
+/* contact/results.html.erb */
+#results{
+	width:100%;
+	border:1px;
+	margin:10px auto;
+}
+.tableheader{
+	color:#F4D14D;
+	opacity:0.85;
+	font-weight:bold;
+	background:#444444;
+}
+
