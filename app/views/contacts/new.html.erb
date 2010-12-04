@@ -1,1 +1,31 @@
 <h1 class='titlebar'>New:</h1>
+<%= render 'shared/errors' %>
+
+<%= form_for @contact do |f| %>
+	<fieldset>
+		<legend>Disposition details:</legend>
+		Followup required? <br />
+		<%= f.label "Yes" %>
+		<%= f.radio_button :followup , 1  %><br />
+		<%= f.label "No" %>
+		<%= f.radio_button :followup , 0 %><br />
+
+		<%= f.label :time_to_complete %><br />	
+		<%= f.text_field :time_to_complete %><br />
+
+		<%= f.label :suggested_wrapup %><br />
+		<%= f.text_field :suggested_wrapup %><br />
+		
+		<%= f.label "interaction ID" %><br />
+		<%= f.text_field :interaction_id %><br />
+		
+		<%= f.label :notes %><br />
+		<%= f.text_area :notes %><br />
+		<%= f.label "Channel of purchase:"%><br/>
+		<%= f.collection_select :channel_id, Channel.find(:all), :id, :name %>
+		
+	<div class = "actions">
+		<%= f.submit "Submit" %>
+	</div>
+	</fieldset>
+<% end %>

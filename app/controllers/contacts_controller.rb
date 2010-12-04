@@ -1,6 +1,7 @@
 class ContactsController < ApplicationController
     def index #for reporting
-      @contacts = Contact.find(:all)
+      params[:sort] ||= "created_at"
+      @contacts = Contact.order(params[:sort])
     end
 
     def show #click into single
@@ -10,13 +11,14 @@ class ContactsController < ApplicationController
 
     def new #on pop
       @contact = Contact.new
+      @channels = Channel.find(:all)
     end
 
     def create #takes form submit from new 
       @contact = Contact.new(params[:contact])
       if @contact.save
         flash[:success] = "Disposition saved successfully"
-        redirect to @contact
+        redirect_to :root
       else
         render 'new'
       end

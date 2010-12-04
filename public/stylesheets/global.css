@@ -5,6 +5,10 @@
 	font-weight:normal;
 	padding:5px 10px;
 }
+.titlebar a{
+	text-decoration:none;
+	color:inherit;
+}
 /* View-specific CSS */
 /* contact/results.html.erb */
 #results{
@@ -18,4 +22,11 @@
 	font-weight:bold;
 	background:#444444;
 }
-
+.tableheader a{
+	text-decoration:none;
+	color:inherit;
+}
+.footerlinks li{
+	display:inline;
+	list-style-type: none ;
+}

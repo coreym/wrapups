@@ -1,0 +1,12 @@
+<% if @contact.errors.any? %>
+  <div class='error'>
+    <h2><%= pluralize(@contact.errors.count, "error") %> 
+        prohibited this disposition from being saved:</h2>
+    <p>There were problems with the following fields:</p>
+    <ul>
+    <% @contact.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

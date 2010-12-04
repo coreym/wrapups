@@ -16,5 +16,6 @@
 
 class Contact < ActiveRecord::Base
 belongs_to :channel
+validates_presence_of :time_to_complete, :notes, :followup, :interaction_id, :channel_id
 
 end

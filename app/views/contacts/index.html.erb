@@ -2,14 +2,14 @@
 <table id='results'>
 	<h1 class='titlebar'>Results:</h1>
 	<tr class='tableheader'>
-		<td>ID</td>
-		<td>Channel</td>
-		<td>TtC</td>
-		<td>Followup?</td>
-		<td>Interaction ID</td>
-		<td>Timestamp</td>
-		<td>Notes</td>
-		<td>Suggested wrapup</td>
+		<td><%= link_to "ID", :sort => "id" %></td>
+		<td><%= link_to "Channel", :sort => "channel_id"%></td>
+		<td><%= link_to "TtC", :sort => "time_to_complete" %></td>
+		<td><%= link_to "Followup?", :sort => "followup" %></td>
+		<td><%= link_to "Interaction ID", :sort => "interaction_id" %></td>
+		<td><%= link_to "Timestamp", :sort => "created_at" %></td>
+		<td><%= link_to "Notes", :sort => "notes" %></td>
+		<td><%= link_to "Suggested wrapup", :sort => "suggested_wrapup" %></td>
 	</tr>
 	<% @contacts.each do |contact| %>
 	<tr>
