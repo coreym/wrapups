@@ -1,0 +1,16 @@
+(in /Users/cmaher/Sites/wrapup)
+    dispositions GET    /dispositions(.:format)          {:action=>"index", :controller=>"dispositions"}
+    dispositions POST   /dispositions(.:format)          {:action=>"create", :controller=>"dispositions"}
+ new_disposition GET    /dispositions/new(.:format)      {:action=>"new", :controller=>"dispositions"}
+edit_disposition GET    /dispositions/:id/edit(.:format) {:action=>"edit", :controller=>"dispositions"}
+     disposition GET    /dispositions/:id(.:format)      {:action=>"show", :controller=>"dispositions"}
+     disposition PUT    /dispositions/:id(.:format)      {:action=>"update", :controller=>"dispositions"}
+     disposition DELETE /dispositions/:id(.:format)      {:action=>"destroy", :controller=>"dispositions"}
+        contacts GET    /contacts(.:format)              {:action=>"index", :controller=>"contacts"}
+        contacts POST   /contacts(.:format)              {:action=>"create", :controller=>"contacts"}
+     new_contact GET    /contacts/new(.:format)          {:action=>"new", :controller=>"contacts"}
+    edit_contact GET    /contacts/:id/edit(.:format)     {:action=>"edit", :controller=>"contacts"}
+         contact GET    /contacts/:id(.:format)          {:action=>"show", :controller=>"contacts"}
+         contact PUT    /contacts/:id(.:format)          {:action=>"update", :controller=>"contacts"}
+         contact DELETE /contacts/:id(.:format)          {:action=>"destroy", :controller=>"contacts"}
+            root        /(.:format)                      {:controller=>"contacts", :action=>"index"}

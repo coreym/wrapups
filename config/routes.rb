@@ -1,5 +1,7 @@
 Wrapup::Application.routes.draw do
+  resources :dispositions
   resources :contacts
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

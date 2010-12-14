@@ -1,0 +1,38 @@
+<table id ='results'>
+	<h1 class='titlebar'>Results:</h1>
+	<tr class='tableheader'>
+		<td>Actions</td>
+		<td><%= link_to "ID", :sort => "id" %></td>
+		<td><%= link_to "Channel", :sort => "channel_id"%></td>
+		<td><%= link_to "TtC", :sort => "time_to_complete" %></td>
+		<td><%= link_to "Followup?", :sort => "followup" %></td>
+		<td><%= link_to "Interaction ID", :sort => "interaction_id" %></td>
+		<td><%= link_to "Timestamp", :sort => "created_at" %></td>
+		<td><%= link_to "Notes", :sort => "notes" %></td>
+		<td><%= link_to "Suggested wrapup", :sort => "suggested_wrapup" %></td>
+	</tr>
+<% @dispositions.each do |disposition| %>
+	<tr>
+		<%= link_to disposition do %>
+	    <td><%= link_to image_tag('sweetie/zoom-in-16.png'), disposition %>
+	    <%= link_to image_tag('sweetie/pencil-16.png'), edit_disposition_path(disposition) %>
+	    <%= link_to image_tag('sweetie/cross-16.png'), disposition, :confirm => 'Are you sure?', :method => :delete %></td>
+		<td><%= disposition.id %></td>
+		<td><%= disposition.channel[:name] %></td>
+		<td><%= disposition.time_to_complete %>s</td>
+		<td><%= if disposition.followup? 
+					"yes" 
+				else 
+					"no" 
+				end %></td>
+		<td><%= disposition.interaction_id %></td>
+		<td><%= disposition.created_at %></td>
+		<td><%= truncate("#{disposition.notes}") %></td>
+		<td><%= truncate("#{disposition.suggested_wrapup}") %></td>
+		<% end %>
+
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'New Disposition', new_disposition_path %>

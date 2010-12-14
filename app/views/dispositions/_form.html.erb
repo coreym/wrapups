@@ -1,7 +1,15 @@
-<h1 class='titlebar'>New:</h1>
-<%= render 'shared/errors' %>
+<%= form_for(@disposition) do |f| %>
+  <% if @disposition.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@disposition.errors.count, "error") %> prohibited this disposition from being saved:</h2>
 
-<%= form_for @contact do |f| %>
+      <ul>
+      <% @disposition.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 	<fieldset>
 		<legend>Disposition details:</legend>
 		Followup required? <br />
@@ -15,10 +23,10 @@
 
 		<%= f.label :suggested_wrapup %><br />
 		<%= f.text_field :suggested_wrapup %><br />
-		
+
 		<%= f.label "interaction ID" %><br />
 		<%= f.text_field :interaction_id %><br />
-		
+
 		<%= f.label :notes %><br />
 		<%= f.text_area :notes %><br />
 		<%= f.label "Channel of purchase:"%><br/>
