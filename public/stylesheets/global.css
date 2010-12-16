@@ -1,16 +1,28 @@
 /* Global CSS */
+body{
+	background-color:#E7E7E;
+}
 .titlebar{
-	background:none repeat scroll 0 0 #F1F1F1;
+	background:url("../images/titlebar-bg.gif") repeat-x scroll 0 0 #333333;
 	border-bottom:1px solid #DDDDDD;
 	font-weight:normal;
 	padding:5px 10px;
+	color:#F1f1f1;
 }
 .titlebar a{
 	text-decoration:none;
 	color:inherit;
 }
+.round {
+  -moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
+}
+
 /* View-specific CSS */
-/* contact/results.html.erb */
+/* 	contact/results.html.erb 
+	disposition/results.html.erb 
+*/
 #results{
 	width:100%;
 	border:1px;
@@ -18,9 +30,8 @@
 }
 .tableheader{
 	color:#F4D14D;
-	opacity:0.85;
 	font-weight:bold;
-	background:#444444;
+	background:#333333;
 }
 .tableheader a{
 	text-decoration:none;
@@ -29,4 +40,29 @@
 .footerlinks li{
 	display:inline;
 	list-style-type: none ;
+}
+/* disposition/new.html.erb */
+
+.new_disposition{
+}
+input, textarea{ 
+	background:url("../images/text-bg.gif") repeat-x scroll 0 0 #FFFFFF;
+	border:1px solid #B5B8C8;
+	font-size:1.3em;
+	padding:3px 3px;
+	margin:0;
+	height:22px;
+	line-height:18px;
+	vertical-align:middle;
+}
+input{
+	height:23px;
+}
+fieldset {
+	background-color:#F1F1F1;
+}
+
+.actions input{
+	background-color:#E5ECF9;
+	height:auto;	
 }

@@ -15,8 +15,12 @@
 #
 
 class Disposition < ActiveRecord::Base
-belongs_to :channel
-validates_presence_of :time_to_complete, :notes, :followup, :interaction_id, :channel_id
+belongs_to :channel 
+belongs_to :business
+belongs_to :mood
+belongs_to :promotion
+
+validates_presence_of :time_to_complete, :notes, :interaction_id, :channel_id
 
 
 end

@@ -10,7 +10,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101206190743) do
+ActiveRecord::Schema.define(:version => 20101215234558) do
+
+  create_table "businesses", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "channels", :force => true do |t|
     t.string   "name"
@@ -39,6 +46,21 @@ ActiveRecord::Schema.define(:version => 20101206190743) do
     t.boolean  "followup"
     t.string   "suggested_wrapup"
     t.integer  "interaction_id"
+    t.integer  "business_id"
+    t.integer  "promotion_id"
+    t.integer  "mood_id"
+  end
+
+  create_table "moods", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "promotions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
